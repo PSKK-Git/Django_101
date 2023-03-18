@@ -8,6 +8,15 @@ class Post(models.Model):
     def __str__(self):
         return self.text
 
+class SubPost(models.Model):
+    product = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='subposts')
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='subpost')
+    description = models.TextField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    discount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    def __str__(self):
+        return self.name
 
 from django.db import models
 

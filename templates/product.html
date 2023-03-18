@@ -1,17 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="col-sm-6 col-md-3">
+<div class="row">
+  <div class="col-sm-10 offset-sm-1 py-5">
     <h1>{{ product.name }}</h1>
     <img src="{{ product.image.url }}"><br>
     {{ product.description }}<br>
     <h2>Subproducts:</h2>
     {% for subproduct in product.subproducts.all %}
-      <a href="{% url 'subproduct_detail' subproduct.pk %}">{{ subproduct.name }}</a><br>
+      {{ subproduct.name }}<br>
+      
+      <img src="{{ subproduct.image.url }}"><br>
+      {{ subproduct.description }}<br>
+      {{ subproduct.price }}<br>
+      {{ subproduct.discount }}<br>
+      <br>
     {% endfor %}
+   
+  </div>
 </div>
-
-
 
 <br>
 <br>

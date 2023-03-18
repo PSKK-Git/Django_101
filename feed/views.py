@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.views.generic import TemplateView, DetailView, FormView
 from django.shortcuts import render, get_object_or_404
-from .models import Product, SubProduct
+from .models import Product, SubProduct, SubPost
 
 from .models import Post
 
@@ -17,14 +17,22 @@ class HomePageView(TemplateView):
 class PostDetailView(DetailView):
     template_name = "detail.html"
     model = Post
-    
-def home(request):
-    products = Product.objects.all()
-    return render(request, 'home.html', {'products': products})
+
+class SubPostDetailView(DetailView):
+    template_name = "detail.html"
+    model = SubPost
+
+def subpost_detail(request, pk):
+    subpost = get_object_or_404(SubPost, pk=pk)
+    return render(request, 'subpost.html', {'subpost': subpost})
+# def home(request):
+#     products = Product.objects.all()
+#     return render(request, 'home.html', {'products': products})
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
-    return render(request, 'product.html', {'product': product})
+    subproduct = get_object_or_404(SubProduct, pk=pk)
+    return render(request, 'product.html', {'product': product, 'subproduct': subproduct})
 
 def subproduct_detail(request, pk):
     subproduct = get_object_or_404(SubProduct, pk=pk)

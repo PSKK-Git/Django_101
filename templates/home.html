@@ -1,0 +1,82 @@
+{% extends 'base.html'%}
+{% load thumbnail %}
+{% load static%}
+
+{% block title %}Home{% endblock title %}
+
+{% block banner-slider %}
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://www.drsoilhealth.com/1630047894159_556508.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.drsoilhealth.com/1630047894097_705243.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.drsoilhealth.com/1630047893980_233844.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+{% endblock banner-slider %}
+{% comment %} gpt {% endcomment %}
+
+{% block content %}
+<h1>Products</h1>
+{% for product in products %}
+  <a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a><br>
+{% endfor %}
+{% endblock %}
+
+
+{% block body%}
+    {% for post in posts%}
+    <div class="col-sm-6 col-md-3">
+        <a href="{% url 'feed:detail' post.id %}"
+          
+              <div class="card my-4">
+                
+                  {% thumbnail post.image "200x200" crop="center" as im %}
+                      <img src="{{ im.url }}" class="card-img-top" alt="...">
+                  {% endthumbnail %}
+
+              {{post.text}}
+
+                  
+              </div>
+        
+        <a>
+    </div>
+    {% endfor %}
+{% endblock body%}
+
+{% block information %}
+<div class="container">
+    <div class="row bg-success text-center p-5 text-white boder-bottom shadow">
+        <h1>Products</h1>
+        <small class ="fs-5" >
+            “Way2Agritech” is a comprehensive agri-technology solutions covering agri inputs, implements and machineries for the farmers and other users. The objective of Way2Agritech is to act as catalyst in agricultural technology adoption by the farmers, knowledge transformation and promotion of quality agri-tech products and sales generation. Way2Agritech will be a channel partner between farmers or technology users and the manufacturers. Some of the key initiatives taken up under Way2Agritech are physical outlet, technical guidance to farmers, facilitation of new and customized technology development etc. Online services under the brand Way2Agritech included Mob App Way2Agritech and e-commerce portal www.way2agritech.com. Product specific websites for different categories of products covers www.powertiller.in (for farm machineries & implements), www.drsoilhealth.com (for plant growth promoters & plant protection products) and www.urbanagriculture.in (for terrace garden products).
+        </small>
+    </div>
+</div>
+   
+
+{% endblock information %}
+
+
+{% block main-content %}
+    
+<br></br>
+<br></br>
+
+{% endblock main-content %}
+

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-sm-6 col-md-3">
+    <h1>{{ subproduct.name }}</h1>
+    <img src="{{ subproduct.image.url }}"><br>
+    {{ subproduct.description }}<br>
+    Price: {{ subproduct.price }}<br>
+    Discount: {{ subproduct.discount }}<br>
+</div>
+<br>
+<br>
+{% endblock %}

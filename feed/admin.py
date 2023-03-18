@@ -1,7 +1,14 @@
 from django.contrib import admin
-from .models import Post
-# Register your models here.
+from .models import Post, Product, SubProduct
+
 class PostAdmin(admin.ModelAdmin):
     pass
 
+class ProductAdmin(admin.ModelAdmin):
+    pass
+class SubProductAdmin(admin.ModelAdmin):
+    pass
+
 admin.site.register(Post,PostAdmin)
+admin.site.register(Product)
+admin.site.register(SubProduct)

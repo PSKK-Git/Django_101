@@ -6,19 +6,21 @@
     <h1>{{ product.name }}</h1>
     <img src="{{ product.image.url }}"><br>
     {{ product.description }}<br>
-    <h2>Subproducts:</h2>
-    {% for subproduct in product.subproducts.all %}
-      {{ subproduct.name }}<br>
+
+  </div>
+</div>
+
+    <h2>All Products:</h2>
+    {% for product in product.all %}
+      {{ product.name }}<br>
       
-      <img src="{{ subproduct.image.url }}"><br>
-      {{ subproduct.description }}<br>
-      {{ subproduct.price }}<br>
-      {{ subproduct.discount }}<br>
+      <img src="{{ product.image.url }}"><br>
+      {{ product.description }}<br>
+      {{ product.price }}<br>
+      {{ product.discount }}<br>
       <br>
     {% endfor %}
    
-  </div>
-</div>
 
 <br>
 <br>

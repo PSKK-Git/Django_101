@@ -1,23 +1,41 @@
 {% extends "base.html" %}
+{% load thumbnail %}
 
-{% block title %}{{ object.text }}{% endblock %}
+{% block title %}{{ object.name }}{% endblock %}
 
 {% block body %}
     <div class="row">
-        <div class="col-sm-10 offset-sm-1 py-5">
-            {{ object.text }}
-            <img src="{{ object.image.url }}" class="img-fluid rounded">
-            <h2>Subproducts:</h2>
-            {% for subpost in post.subposts.all %}
-                {{ subpost.name }}<br>
-                
-                <img src="{{ subpost.image.url }}"><br>
-                {{ subpost.description }}<br>
-                {{ subpost.price }}<br>
-                {{ subpost.discount }}<br>
-             <br>
-            {% endfor %}
+        <div class="col-sm-10 offset-sm-1 py-2">
+            <h1>{{ object.name }}</h1>
+            
+            <img src="{{ object.image.url }}" class="img-fluid rounded" width=300px height=300px>
+            <p>hi giv ivuivu gvvivuvi vui</p>
+            
+            <br><br>
+
+            <h2>Subproducts</h2>
+                <div class="row">
+                    {% for subpost in post.subposts.all %}
+                      <div class="col-sm-6 col-md-3">
+                        <div class="card my-2">
+                        <a style="text-decoration: none" href="{% url 'feed:subpost_detail' subpost.id %}" >
+                          {% thumbnail subpost.image "200x200" crop="center" as im %}
+                            <img src="{{ im.url }}" class="card-img-top" alt="...">
+                          {% endthumbnail %}
+                        
+                          
+                            <p class="card-text">{{ subpost.name }} </p>
+                            <h6>Price:{{ subpost.price }} </h6>
+                        
+                          
+                        </a>
+                        </div>
+                      </div>
+                    {% endfor %}
+                </div>
 
         </div>
+        
     </div>
 {% endblock %}
+

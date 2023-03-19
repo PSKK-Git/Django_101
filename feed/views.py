@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.views.generic import TemplateView, DetailView, FormView
 from django.shortcuts import render, get_object_or_404
-from .models import Product, SubProduct, SubPost
+from .models import Product, SubProduct, SubPost, Banner
 
 from .models import Post
 
@@ -13,6 +13,20 @@ class HomePageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['posts'] = Post.objects.all().order_by('-id')
         return context
+    
+
+# class BannerHomePageView(TemplateView):
+#     template_name = "home.html"
+
+#     def get_banner_data(self, **kwargs):
+#         bannercontext = super().get_context_data(**kwargs)
+#         bannercontext['banners'] = Banner.objects.all()
+#         return bannercontext
+
+
+def home(request):
+    banner = Banner.objects.first() # get the first banner object
+    return render(request, 'home.html', {'banner': banner})
 
 class PostDetailView(DetailView):
     template_name = "detail.html"

@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
+
 
 {% block content %}
-<div class="col-sm-6 col-md-3">
+<div class="col-sm-6 col-md-3 px-1">
     <h1>{{ subpost.name }}</h1>
-    <img src="{{ subpost.image.url }}"><br>
+    <img src="{{ subpost.image.url }}" height=300px width=300px><br>
     {{ subpost.description }}<br>
     Price: {{ subpost.price }}<br>
     Discount: {{ subpost.discount }}<br>
 </div>
 <br>
-<br>
+
+
+
 {% endblock %}

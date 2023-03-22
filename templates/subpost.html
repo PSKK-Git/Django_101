@@ -3,15 +3,21 @@
 
 
 {% block content %}
-<div class="col-sm-6 col-md-3 px-1">
-    <h1>{{ subpost.name }}</h1>
-    <img src="{{ subpost.image.url }}" height=300px width=300px><br>
-    {{ subpost.description }}<br>
-    Price: {{ subpost.price }}<br>
-    Discount: {{ subpost.discount }}<br>
+<div class="row">
+    <div class="col-sm-10 offset-sm-1 py-2">
+        <div class="col-sm-6  px-1 text-white boder-bottom shadow bg-black font-sans-serif">
+            <h1>{{ subpost.name }}</h1>
+            <img src="{{ subpost.image.url }}"class="img-fluid rounded" height=300px width=300px><br>
+            {{ subpost.description }}<br>
+            Price: {{ subpost.price }}<br>
+            Discount: {{ subpost.discount }}<br>
+        </div>
+    </div>
 </div>
 <br>
 
 
 
 {% endblock %}
+
+   

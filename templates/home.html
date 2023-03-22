@@ -1,43 +1,39 @@
 {% extends 'base.html'%}
+
 {% load thumbnail %}
+{% load static %}
 
 
 {% block title %}Home{% endblock title %}
 
 
-
-
-
-{% comment %} {% block banner-slider %}
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{{ banner_home.object.image.url }}" class="d-block w-100" alt="...">
-        {% comment %} <img src="{{ object.image.url }}" class="img-fluid rounded" width=300px height=300px> 
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
-{% endblock banner-slider %} {% endcomment %}
-{% comment %} gpt {% endcomment %}
-
-
-
-{% block body%}
+{% block banner%}
 <div class="banner">
-  <img src="{{ banner.image.url }}" alt="{{ banner.title }}">
-  <h2>{{ banner.title }}</h2>
+    <img src="{{ banner.image.url }}" alt="{{ banner.title }}">
+    <h2>{{ banner.title }}</h2>
+  </div>
+{% endblock banner%}
+{% block body%}
+
+<div class="container1">
+<div class="heading">
+<h1>Way2Agritech</h1>
 </div>
-<h1>Products</h1>
+
+<div class="loop-wrapper">
+  <div class="mountain"></div>
+  <div class="hill"></div>
+  <div class="tree"></div>
+  <div class="tree"></div>
+  <div class="tree"></div>
+  <div class="rock"></div>
+
+</div> 
+</div>
+<br>
 <div class="row">
+  <h1>Products</h1>
+
   {% for post in posts%}
     <div class="col-sm-6 col-md-3">
       <div class="card my-4">
@@ -45,35 +41,52 @@
           <img src="{{ im.url }}" class="card-img-top" alt="...">
 
         {% endthumbnail %}
-        <div class= "card body">
+        <div class= "card-body text-white boder-bottom shadow bg-black">
           <p class="card-text">{{ post.name }} </p>
           <p class="card-text">Price:{{ post.price }} </p>
           <a href="{% url 'feed:detail' post.id %}" class="btn btn-primary">View</a>
         </div>
       </div>
+      
     </div>
   {% endfor %}
 </div>
 {% endblock body%}
 
+
 {% block information %}
-<div class="container">
-    <div class="row bg-success text-center p-5 text-white boder-bottom shadow">
-        <h1>Products</h1>
+
+<div class="info">
+    <div class="row bg-dark text-center p-5 text-white boder-bottom shadow">
+        <h1>“Way2Agritech”</h1>
         <small class ="fs-5" >
             “Way2Agritech” is a comprehensive agri-technology solutions covering agri inputs, implements and machineries for the farmers and other users. The objective of Way2Agritech is to act as catalyst in agricultural technology adoption by the farmers, knowledge transformation and promotion of quality agri-tech products and sales generation. Way2Agritech will be a channel partner between farmers or technology users and the manufacturers. Some of the key initiatives taken up under Way2Agritech are physical outlet, technical guidance to farmers, facilitation of new and customized technology development etc. Online services under the brand Way2Agritech included Mob App Way2Agritech and e-commerce portal www.way2agritech.com. Product specific websites for different categories of products covers www.powertiller.in (for farm machineries & implements), www.drsoilhealth.com (for plant growth promoters & plant protection products) and www.urbanagriculture.in (for terrace garden products).
         </small>
+        
     </div>
+
+    
 </div>
+
    
 
 {% endblock information %}
 
 
 {% block main-content %}
+<div class="loop-wrapper">
+  <div class="mountain"></div>
+  <div class="hill"></div>
+  <div class="tree"></div>
+  <div class="tree"></div>
+  <div class="tree"></div>
+  <div class="rock"></div>
+  <div class="truck"></div>
+  <div class="wheels"></div>
+</div> 
     
-<br></br>
-<br></br>
+{% comment %} <br></br>
+<br></br> {% endcomment %}
 
 {% endblock main-content %}
 

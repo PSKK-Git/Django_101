@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+
+{% load thumbnail %}
+{% load static %}
+
+
+{% block banner%}
+<div class="banner">
+    <img src="{{ banner.image.url }}" alt="{{ banner.title }}">
+    <h2>{{ banner.title }}</h2>
+  </div>
+{% endblock banner%}

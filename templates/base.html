@@ -13,13 +13,12 @@
     <link rel="stylesheet" href="{% static 'app/css/all.min.css'%}"/>
     <link rel="icon" href="https://www.drsoilhealth.com/img/images/Way2agritech%20(1).png">
 
-    
-
+    <link rel="stylesheet" href="{% static 'css/style.css'%}"/>
 
     <title>Way2ABI_App|{% block title %}{% endblock title %}</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             {% comment %} <img src= "{% static "app/images/product/logo.png"%}" width="50px" height="50px"/> {% endcomment %}
@@ -99,6 +98,8 @@
 
       {% block information %} {% endblock information %}
       {% block main-content %}{% endblock main-content %}
+      
+      
 
       <footer class = "container-fluid  bg-success text-center p-2 mt-5"> 
         Copyright © 2022 Way2Agribusines India Pvt Ltd. All Rights Reserved Way2Agribusiness
@@ -114,6 +115,8 @@
     <script script ="{% static 'app/js/owl.carousel.min.js  '%}"></script>
     <script script ="{% static 'app/js/myscript.js  '%}"></script>
     <script script ="{% static 'app/js/all.min.js  '%}"></script>
+
+
 
 </body>
 </html>

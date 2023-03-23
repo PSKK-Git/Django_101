@@ -3,18 +3,34 @@
 
 
 {% block content %}
-<div class="row">
-    <div class="col-sm-10 offset-sm-1 py-2">
-        <div class="col-sm-6  px-1 text-white boder-bottom shadow bg-black font-sans-serif">
-            <h1>{{ subpost.name }}</h1>
-            <img src="{{ subpost.image.url }}"class="img-fluid rounded" height=300px width=300px><br>
-            {{ subpost.description }}<br>
-            Price: {{ subpost.price }}<br>
-            Discount: {{ subpost.discount }}<br>
+<div class="details">
+    <div class="product_outter  offset-sm-1 py-2">
+        <h1>{{ subpost.name }}</h1>
+        <div class="product_inner px-1 text-white boder-bottom shadow bg-black font-sans-serif">
+            
+                <img src="{{ subpost.image.url }}"class="img-fluid rounded" height=300px width=300px>
+            
+           
+            
         </div>
+        <div class="detail bg-dark text-left p-4 text-white">
+            <div class="discounted_price">    
+            <h4 class="card-text">₹ {{ subpost.price }} </h4>
+            
+            <h5 class="card-text">Discount: {{ subpost.discount }}% </h5>
+            <h5 class="card-text">Discounted Price: {{ subpost.discounted_price }} </h5>
+            </div>
+            <h5 class="card-text">Type: {{ subpost.type }}</h5>
+            <h5 class="card-text">Quantity Available: {{ subpost.quantity_available }} </h5>
+       
+        </div>
+        <div class ="description text-left p-4 text-white" >
+            Description: {{ subpost.description }}                  
+        </div>
+
+        
     </div>
 </div>
-<br>
 
 
 

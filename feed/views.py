@@ -24,8 +24,12 @@ class HomePageView(TemplateView):
 #         return bannercontext
 
 
-def home(request):
-    banner = Banner.objects.first() # get the first banner object
+# def home(request):
+#     banner = Banner.objects.all() # get the first banner object
+#     return render(request, 'home.html', {'banner': banner})
+
+def home(request, pk):
+    banner = get_object_or_404(Banner)
     return render(request, 'home.html', {'banner': banner})
 
 class PostDetailView(DetailView):

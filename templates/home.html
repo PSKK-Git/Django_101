@@ -7,13 +7,17 @@
 {% block title %}Home{% endblock title %}
 
 
-{% block banner%}
-<div class="banner">
-    <img src="{{ banner.image.url }}" alt="{{ banner.title }}">
-    <h2>{{ banner.title }}</h2>
-  </div>
-{% endblock banner%}
+
+
 {% block body%}
+{% for banner in banner%}
+<div class="card my-4">
+  {% thumbnail banner.image "200x200" crop="center" as im %}
+    <img src="{{ im.url }}" class="card-img-top" alt="...">
+
+  {% endthumbnail %}
+  </div>
+{% endfor%}
 
 <div class="container1">
 <div class="heading">
@@ -30,7 +34,7 @@
 
 </div> 
 </div>
-<br>
+
 <div class="row">
   <h1>Products</h1>
 
@@ -42,7 +46,7 @@
 
         {% endthumbnail %}
         <div class= "card-body text-white boder-bottom shadow bg-black">
-          <p class="card-text">{{ post.name }} </p>
+          <h3 class="card-text ">{{ post.name }} </h3>
           <p class="card-text">Price:{{ post.price }} </p>
           <a href="{% url 'feed:detail' post.id %}" class="btn btn-primary">View</a>
         </div>
@@ -57,10 +61,10 @@
 {% block information %}
 
 <div class="info">
-    <div class="row bg-dark text-center p-5 text-white boder-bottom shadow">
+    <div class="row  text-center p-5 text-white boder-bottom shadow">
         <h1>“Way2Agritech”</h1>
         <small class ="fs-5" >
-            “Way2Agritech” is a comprehensive agri-technology solutions covering agri inputs, implements and machineries for the farmers and other users. The objective of Way2Agritech is to act as catalyst in agricultural technology adoption by the farmers, knowledge transformation and promotion of quality agri-tech products and sales generation. Way2Agritech will be a channel partner between farmers or technology users and the manufacturers. Some of the key initiatives taken up under Way2Agritech are physical outlet, technical guidance to farmers, facilitation of new and customized technology development etc. Online services under the brand Way2Agritech included Mob App Way2Agritech and e-commerce portal www.way2agritech.com. Product specific websites for different categories of products covers www.powertiller.in (for farm machineries & implements), www.drsoilhealth.com (for plant growth promoters & plant protection products) and www.urbanagriculture.in (for terrace garden products).
+            “Way2Agritech” is a  agri-technology solutions covering agri inputs, implements for the farmers and other users. The objective of Way2Agritech is to act as catalyst in agricultural technology adoption by the farmers, knowledge transformation and promotion of quality agri-tech products and sales generation. Way2Agritech will be a channel partner between farmers or technology users and the manufacturers. Some of the key initiatives taken up under Way2Agritech are physical outlet, technical guidance to farmers, facilitation of new and customized technology development etc. Online services under the brand Way2Agritech included Mob App Way2Agritech and e-commerce portal www.way2agritech.com. Product specific websites for different categories of products covers www.powertiller.in (for farm machineries & implements), www.drsoilhealth.com (for plant growth promoters & plant protection products) and www.urbanagriculture.in (for terrace garden products).
         </small>
         
     </div>

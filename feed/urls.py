@@ -10,7 +10,7 @@ urlpatterns = [
     path('product/<int:pk>/', views.product_detail, name='product_detail'),
     path('subproduct/<int:pk>/', views.subproduct_detail, name='subproduct_detail'),
     path('subpost/<int:pk>/', views.subpost_detail, name='subpost_detail'),
-    path('', home, name='home'),
+    path('', views.home, name='home'),
     # path('detail/subpost/<int:pk>/', views.subpost_detail, name='detail_subpost_detail'),
 
 ]

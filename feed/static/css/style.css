@@ -409,3 +409,32 @@ color: rgb(162, 161, 161);
   .container-fluid{
     color: white;
   }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .my-div{
+    padding: 10px;
+  }
+  .my-div a:hover {
+   transition: all 0.1s ease-in-out;
+   transform: scale(1.05);
+}
+  .my-div a {
+   color: rgb(255, 255, 255);
+   transition: transform 0.2s ease-in-out;
+
+  
+}
+
+.my-div a.clicked {
+  text-decoration: underline;
+  color: #4DB6AC;
+  transition-delay: 0.05s;
+
+} 
+.d-flex{
+  padding: 10px;
+
+}

@@ -18,7 +18,7 @@
     <title>Way2ABI_App|{% block title %}{% endblock title %}</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
           </a>
@@ -36,7 +36,7 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
              
-              <li class="nav-item dropdown">
+              {% comment %} <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Products
                 </a>
@@ -48,7 +48,7 @@
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Different Product</a></li>
                 </ul>
-              </li>
+              </li> {% endcomment %}
               <li class="nav-item">
                 <a class="nav-link" href="#">Discounts</a>
               </li>
@@ -70,18 +70,28 @@
           
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li class="nav-item dropdown mx-2 ">
-                <a class="nav-link dropdown-toggle text-white " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Profile</a></li>
-                  <li><a class="dropdown-item" href="#">Order</a></li>
-                  <li><a class="dropdown-item" href="#">Product3</a></li>
-                  <li><a class="dropdown-item" href="#">Another</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Different</a></li>
-                </ul>
-              </li>
+                <div class="dropdown bg-black ">
+                  <button class="btn btn-default dropdown-toggle text-light " type="button" data-toggle="dropdown">Products
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="#">HTML</a></li>
+                    <li><a tabindex="-1" href="#">CSS</a></li>
+                    <li class="dropdown-submenu">
+                      <a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                        <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
+                        <li class="dropdown-submenu">
+                          <a class="test" href="#">Another dropdown <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="#">3rd level dropdown</a></li>
+                            <li><a href="#">3rd level dropdown</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
 
         </ul>
 
@@ -103,7 +113,7 @@
       
       
 
-      <footer class = "container-fluid  bg-dark text-center p-2 mt-5"> 
+      <footer class = "container-fluid  bg-dark text-center p-2 mt-5 .text-muted"> 
         Copyright © 2022 Way2Agribusines India Pvt Ltd. All Rights Reserved Way2Agribusiness
         
       </footer>

@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="details">
-    <div class="product_outter  offset-sm-1 py-2">
+    <div class="product_outter col-sm-10  offset-sm-1 py-2">
         <h1>{{ subpost.name }}</h1>
         <div class="product_inner px-1 text-white boder-bottom shadow bg-black font-sans-serif">
             
@@ -13,7 +13,7 @@
            
             
         </div>
-        <div class="detail bg-dark text-left p-4 text-white">
+        <div class="detail  text-left p-4 text-white">
             <div class="discounted_price">    
             <h4 class="card-text">₹ {{ subpost.price }} </h4>
             
@@ -24,7 +24,7 @@
             <h5 class="card-text">Quantity Available: {{ subpost.quantity_available }} </h5>
        
         </div>
-        <div class ="description text-left p-4 text-white" >
+        <div class ="description text-left p-4 " >
             Description: {{ subpost.description }}                  
         </div>
 

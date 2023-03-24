@@ -27,7 +27,11 @@ class SubPost(models.Model):
     def __str__(self):
         return self.name
 
-
+class Banner(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='banners')
+    def __str__(self):
+        return self.name
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
@@ -46,9 +50,5 @@ class SubProduct(models.Model):
     def __str__(self):
         return self.name
 
-class Banner(models.Model):
-    name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='banners')
-    def __str__(self):
-        return self.name
+
 

@@ -12,14 +12,14 @@
             </div>
             <div class="details_container  p-5">
                 <h4 class="card-text">₹ {{ post.price }} </h4>
-                <h5 class="card-text">Discount: {{ post.discount }}% </h5>
-                <h5 class="card-text">Discounted: {{ post.discounted_price }} </h5>
+                <h5 class="card-text">{{ post.discount }}% OFF</h5>
+                <h5 class="card-text">Discounted Price:{{ post.discounted_price }} </h5>
 
                 <h5 class="card-text">Type: {{ post.type }} </h5>
                 <h5 class="card-text">Quantity Available: {{ post.quantity_available }} </h5>
             </div>
             <div class ="description" >
-              Description: {{ post.description }}                  
+               {{ post.description }}                  
             </div>
         </div>
         <hr>

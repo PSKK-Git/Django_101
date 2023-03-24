@@ -13,8 +13,12 @@ class SubProductAdmin(admin.ModelAdmin):
 class SubPostAdmin(admin.ModelAdmin):
     pass
 
+
 admin.site.register(Post,PostAdmin)
-admin.site.register(Banner,BannerAdmin)
+admin.site.register(Banner)
 admin.site.register(Product)
 admin.site.register(SubProduct)
 admin.site.register(SubPost)
+
+
+

@@ -10,14 +10,19 @@
 
 
 {% block body%}
-{% for banner in banner%}
-<div class="card my-4">
-  {% thumbnail banner.image "200x200" crop="center" as im %}
-    <img src="{{ im.url }}" class="card-img-top" alt="...">
 
-  {% endthumbnail %}
+  {% comment %} <div>
+    <img src="{{ banners.image }}" alt="Banner Image">
   </div>
-{% endfor%}
+
+    <div class="col-sm-6 col-md-3">
+      <div class="card my-4">
+    {% thumbnail banners.image "200x200" crop="center" as im %}
+          <img src="{{ im.url }}" class="card" alt="...">
+
+        {% endthumbnail %}
+      </div>
+      </div> {% endcomment %}
 
 <div class="container1">
   <div class="heading">

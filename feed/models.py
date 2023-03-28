@@ -6,11 +6,18 @@ class Post(models.Model):
     name = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
     quantity_available=models.CharField(max_length=100)
-    image = models.ImageField(upload_to='subpost')
+    image = models.ImageField(upload_to='post')
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    discount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    discount = models.CharField(max_length=100)
     discounted_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    def __str__(self):
+        return self.name
+
+
+class Baner(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='baner')
     def __str__(self):
         return self.name
 
@@ -22,16 +29,19 @@ class SubPost(models.Model):
     image = models.ImageField(upload_to='subpost')
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    discount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    discount =models.CharField(max_length=100)
     discounted_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     def __str__(self):
         return self.name
 
 class Banner(models.Model):
-    name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='banners')
+    image = models.ImageField(upload_to='banners/')
+    title = models.CharField(max_length=200)
+    url = models.URLField()
+
     def __str__(self):
-        return self.name
+        return self.title
+
 
 
 

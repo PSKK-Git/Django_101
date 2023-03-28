@@ -1,9 +1,10 @@
 from django.contrib import messages
 from django.views.generic import TemplateView, DetailView, FormView
 from django.shortcuts import render, get_object_or_404
-from .models import Product, SubProduct, SubPost, Banner
+from .models import Product, SubProduct, SubPost,Baner
 
-from .models import Post
+from .models import Post,Banner
+from django.shortcuts import render
 
 
 class HomePageView(TemplateView):
@@ -12,26 +13,26 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['posts'] = Post.objects.all().order_by('-id')
+        context['banners'] = Banner.objects.all()
+        return context
+
+    
+class BanerView(TemplateView):
+    template_name = "home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['baners'] = Baner.objects.all()
         return context
     
 
-# class BannerHomePageView(TemplateView):
-#     template_name = "home.html"
-
-#     def get_banner_data(self, **kwargs):
-#         bannercontext = super().get_context_data(**kwargs)
-#         bannercontext['banners'] = Banner.objects.all()
-#         return bannercontext
 
 
-# def home(request):
-#     banner = Banner.objects.all() # get the first banner object
-#     return render(request, 'home.html', {'banner': banner})
+
 
 def home(request):
-    banner = Banner.objects.first()
-    return render(request, 'home.html', {'banner': banner})
-    
+    return render(request, 'feed/home.html')
+
 class PostDetailView(DetailView):
     template_name = "detail.html"
     model = Post
@@ -43,9 +44,6 @@ class SubPostDetailView(DetailView):
 def subpost_detail(request, pk):
     subpost = get_object_or_404(SubPost, pk=pk)
     return render(request, 'subpost.html', {'subpost': subpost})
-# def home(request):
-#     products = Product.objects.all()
-#     return render(request, 'home.html', {'products': products})
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)

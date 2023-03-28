@@ -3,34 +3,33 @@
 
 
 {% block content %}
-<div class="details">
-    <div class="product_outter col-sm-10  offset-sm-1 py-2">
-        <h1>{{ subpost.name }}</h1>
-        <div class="product_inner px-1 text-white boder-bottom shadow bg-black font-sans-serif">
-            
-                <img src="{{ subpost.image.url }}"class="img-fluid rounded" height=300px width=300px>
-            
-           
-            
-        </div>
-        <div class="detail  text-left p-4 text-white">
-            <div class="discounted_price">    
-            <h4 class="card-text">₹ {{ subpost.price }} </h4>
-            
-            <h5 class="card-text">Discount: {{ subpost.discount }}% </h5>
-            <h5 class="card-text">Discounted Price: {{ subpost.discounted_price }} </h5>
-            </div>
-            <h5 class="card-text">Type: {{ subpost.type }}</h5>
-            <h5 class="card-text">Quantity Available: {{ subpost.quantity_available }} </h5>
-       
-        </div>
-        <div class ="description text-left p-4 " >
-            Description: {{ subpost.description }}                  
-        </div>
 
-        
+  <div class="product">
+    <div class="image-container">
+      <div class="discount">
+        <h6>{{subpost.discount }}% OFF</h6>
+      </div>
+      <img src="{{ subpost.image.url }}" class="img-fluid rounded" height="300px" width="300px" />
     </div>
-</div>
+    <div class="details-container">
+      <h2 class="product-title">{{ subpost.name }}</h2>
+      <div class="container_price">
+        <h4 class="discounted_price">₹ {{ subpost.discounted_price }}</h4>
+        <h4 class="price">₹ {{ subpost.price }}  </h4>
+        <h5 class="card-text">Type: {{ subpost.type }} </h5>
+                <h5 class="card-text">Quantity Available: {{ subpost.quantity_available }} </h5>
+      </div>
+      
+      <button class="product-button">Add to Cart</button>
+     
+    </div>
+    <div class="description-container">
+      <h3>Description</h3>
+      <p class="product-description">{{subpost.description}}</p>
+    </div>
+  </div>
+  
+
 
 
 

@@ -1,5 +1,9 @@
+{% load static%}
+
+
 <!DOCTYPE html>
-{%load static%}
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,86 +19,62 @@
     <link rel="stylesheet" href="{% static 'css/style.css'%}"/>
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 
+  {% comment %} neon button {% endcomment %}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+
+
 
     <title>Way2ABI_App|{% block title %}{% endblock title %}</title>
+    
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item-logo">
-                <a class="nav-link active" aria-current="page" href="/">
-                <img src="https://www.way2agribusiness.com/assets/images/logo.png" height="40px" width="40px" alt="Way2ABI_logo">
-                </a>
-              </li>
-            <div class="my-div">
-              <li class="nav-item">
-                <a class="nav-link "  href="/">Home</a>
-              </li>
+  
+  <nav>
+   
+    <ul>
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/detail/5/">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Careers</a></li>
+      <li class="dropdown">
+        <a href="#">Products <i class="arrow down"></i></a>
+        <div class="dropdown-content">
+          <a href="#">Subproduct 1</a>
+          <a href="#">Subproduct 2</a>
+          <div class="dropdown nested-dropdown">
+            <a href="#">Subproduct 3 <i class="arrow right"></i></a>
+            <div class="dropdown-content nested-dropdown-content">
+              <a href="#">Sub-subproduct 1</a>
+              <a href="#">Sub-subproduct 2</a>
+              <a href="#">Sub-subproduct 3</a>
             </div>
-
-             
-             
-              <div class="my-div">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Discounts</a>
-              </li>
-            </div>
-
-              <div class="my-div">
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-            </div>
-
-            <div class="my-div">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-            </div>
-            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-light btn-outline-submit " type="submit">Search</button>
+             
+              
             </form>
+           
+            
+            
+            
           </div>
 
           
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-            <li class="nav-item dropdown mx-2 ">
-                  <div class="dropdown bg-black ">
-                  <button class="btn btn-default dropdown-toggle text-light " type="button" data-toggle="dropdown">Products
-                    <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                      <li><a tabindex="-1" href="#">HTML</a></li>
-                      <li><a tabindex="-1" href="#">CSS</a></li>
-                        <li class="dropdown-submenu">
-                          <a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
-                          <ul class="dropdown-menu">
-                            <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
-                            <li><a tabindex="-1" href="#">2nd level dropdown</a></li>
-                                <li class="dropdown-submenu">
-                                    <a class="test" href="#">Another dropdown <span class="caret"></span></a>
-                                      <ul class="dropdown-menu">
-                                        <li><a href="#">3rd level dropdown</a></li>
-                                        <li><a href="#">3rd level dropdown</a></li>
-                                      </ul>
-                                </li>
-                          </ul>
-                </li>
-                    </ul>
-                        </div>
-        
-            </ul>
+       
 
         </div>
+        
+           
+        
       </nav>
+      
 
       {% block banner %}
       
@@ -112,9 +92,11 @@
       
 
       <footer class = "container-fluid  bg-dark text-center p-2 mt-5 .text-white"> 
-        Copyright © 2022 Way2Agribusines India Pvt Ltd. All Rights Reserved Way2Agribusiness
         
-      </footer>
+        Copyright © 2022 Way2Agribusines India Pvt Ltd. All Rights Reserved Way2Agribusiness
+        </div>
+        
+    
 
 
 </body>

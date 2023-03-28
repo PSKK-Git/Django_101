@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+
+{% block content %}
+<div class="details">
+    <h1>Im there</h1>
+    <div class="product_outter col-sm-10  offset-sm-1 py-2">
+        <h1>{{ subpost.name }}</h1>
+        <div class="product_inner px-1 text-white boder-bottom shadow bg-black font-sans-serif">
+            
+                <img src="{{ baner.image.url }}"class="img-fluid rounded" height=300px width=300px>
+            
+           
+            
+        </div>
+       
+        
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+   

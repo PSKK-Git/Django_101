@@ -12,10 +12,15 @@
 {% block body%}
 
 
+{% for banner in banners %}
+<div class="banner">
+    <a href="{{ banner.url }}">
+        <img src="{{ banner.image.url }}" alt="{{ banner.title }}">
+    </a>
+</div>
+{% endfor %}
 
-  {% comment %} <div>
-    <img src="{{ banners.image }}" alt="Banner Image">
-  </div>
+  
 
     <div class="col-sm-6 col-md-3">
       <div class="card my-4">
@@ -24,9 +29,9 @@
 
         {% endthumbnail %}
       </div>
-      </div> {% endcomment %}
+      </div> 
 
-<div class="container1">
+{% comment %} <div class="container1">
   <div class="heading">
     <h1>Way2Agritech</h1>
   </div>
@@ -40,17 +45,19 @@
     <div class="rock"></div>
 
   </div> 
-</div>
+</div>  TRUCK ANIMATION{% endcomment %}
 
 
 <div class="row">
   
   <h1>Products</h1>
-
   {% for post in posts%}
     <div class="col-sm-6 col-md-3">
       <div class="card my-4">
         {% thumbnail post.image "200x200" crop="center" as im %}
+        <div class="discount">
+          <h6>{{post.discount }}% OFF</h6>
+        </div>
           <img src="{{ im.url }}" class="card-img-top" alt="...">
 
         {% endthumbnail %}
@@ -87,17 +94,6 @@
 
 
 {% block main-content %}
-<div class="loop-wrapper">
-  <div class="mountain"></div>
-  <div class="hill"></div>
-  <div class="tree"></div>
-  <div class="tree"></div>
-  <div class="tree"></div>
-  <div class="rock"></div>
-  <div class="truck"></div>
-  <div class="wheels"></div>
-</div> 
-    
 
 
 {% endblock main-content %}

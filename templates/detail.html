@@ -4,33 +4,48 @@
 {% block title %}{{ object.name }}{% endblock %}
 
 {% block body %}
-    <div class="details">
-        <div class="details_box col-sm-10 offset-sm-1 py-2 text-white boder-bottom shadow  rounded">
-            <h1>{{ object.name }}</h1>
-            <div class="polaroid">
-              <img src="{{ object.image.url }}" class="img_detail rounded" width=300px height=300px>
-            </div>
-            <div class="details_container  p-5">
-                <h4 class="card-text">₹ {{ post.price }} </h4>
-                <h5 class="card-text">{{ post.discount }}% OFF</h5>
-                <h5 class="card-text">Discounted Price:{{ post.discounted_price }} </h5>
+<div class="product">
+  <div class="image-container">
+    <div class="discount">
+      <h6>{{post.discount }}% OFF</h6>
+    </div>
+    <img src="{{ post.image.url }}" class="img-fluid rounded" height="300px" width="300px" />
+  </div>
+  <div class="details-container">
+    <h2 class="product-title">{{ post.name }}</h2>
+    <div class="container_price">
+      <h4 class="discounted_price">₹ {{ post.discounted_price }}</h4>
+      <h4 class="price">₹ {{ post.price }}  </h4>
+      {% comment %} <h4 class="off"> {{ post.discount }}% OFF </h4> {% endcomment %}
+      <h5 class="card-text">Type: {{ post.type }} </h5>
+              <h5 class="card-text">Quantity Available: {{ post.quantity_available }} </h5>
+    </div>
+    
+    <button class="product-button">Add to Cart</button>
+   
+  </div>
+  <div class="description-container">
+    <h3>Description</h3>
+    <p class="product-description">{{post.description}}</p>
+  </div>
+</div>
 
-                <h5 class="card-text">Type: {{ post.type }} </h5>
-                <h5 class="card-text">Quantity Available: {{ post.quantity_available }} </h5>
-            </div>
-            <div class ="description" >
-               {{ post.description }}                  
-            </div>
-        </div>
+
+    
+
+
         <hr>
         <div class="subproducts col-sm-10 offset-sm-1 py-2 text-white boder-bottom shadow">
-            <h2>Subproducts</h2> 
+            <h2 class="subproducts_heading">Subproducts</h2> 
                 <div class="row rounded">
                     {% for subpost in post.subposts.all %}
                       <div class="col-sm-5 col-md-3 text-dark rounded ">
                         <div class="card my-1 bg-dark boder-bottom shadow">
                         <a style="text-decoration: none" href="{% url 'feed:subpost_detail' subpost.id %}" >
                           {% thumbnail subpost.image "200x200" crop="center" as im %}
+                          <div class="discount">
+                            <h6>{{subpost.discount }}% OFF</h6>
+                          </div>
                             <img src="{{ im.url }}" class="card-img-top" alt="...">
                           {% endthumbnail %}
                             <h5 class="card-text bg-#111111 text-white-50  px-1 py-2">{{ subpost.name }} </h5>

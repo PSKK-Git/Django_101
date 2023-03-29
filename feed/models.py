@@ -15,11 +15,7 @@ class Post(models.Model):
         return self.name
 
 
-class Baner(models.Model):
-    name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='baner')
-    def __str__(self):
-        return self.name
+
 
 class SubPost(models.Model):
     product = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='subposts')
@@ -31,6 +27,13 @@ class SubPost(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     discount =models.CharField(max_length=100)
     discounted_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    def __str__(self):
+        return self.name
+
+
+class Baner(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='baner')
     def __str__(self):
         return self.name
 

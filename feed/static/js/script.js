@@ -1,36 +1,36 @@
 $(document).ready(function() {
 
-  // services click panna footer ku povum
-  // Get the "Services" link
-const servicesLink = document.querySelector('nav ul li:nth-child(3) a');
+//   // services click panna footer ku povum
+//   // Get the "Services" link
+// const servicesLink = document.querySelector('nav ul li:nth-child(3) a');
 
-// Get the footer section
-const footerSection = document.querySelector('footer');
+// // Get the footer section
+// const footerSection = document.querySelector('footer');
 
-// Add a click event listener to the "Services" link
-servicesLink.addEventListener('click', (event) => {
-  // Prevent the default link behavior
-  event.preventDefault();
+// // Add a click event listener to the "Services" link
+// servicesLink.addEventListener('click', (event) => {
+//   // Prevent the default link behavior
+//   event.preventDefault();
   
-  // Scroll smoothly to the footer section
-  footerSection.scrollIntoView({ behavior: 'smooth' });
-});
+//   // Scroll smoothly to the footer section
+//   footerSection.scrollIntoView({ behavior: 'smooth' });
+// });
 
-  // This JavaScript code will add an event listener to each menu item and toggle the "active" class when the user clicks on it. The "active" class will add an underline to the menu item, and it will stay underlined until the user clicks on a different menu item.
-  const currentLocation = location.href;
-  const menuItem = document.querySelectorAll('a');
-  const menuLength = menuItem.length;
-  for (let i = 0; i < menuLength; i++) {
-    if (menuItem[i].href === currentLocation) {
-      menuItem[i].classList.add('active');
-    }
-    // Add the following code
-    else {
-      menuItem[i].classList.remove('active');
-    }
-  }
+//   // This JavaScript code will add an event listener to each menu item and toggle the "active" class when the user clicks on it. The "active" class will add an underline to the menu item, and it will stay underlined until the user clicks on a different menu item.
+//   const currentLocation = location.href;
+//   const menuItem = document.querySelectorAll('a');
+//   const menuLength = menuItem.length;
+//   for (let i = 0; i < menuLength; i++) {
+//     if (menuItem[i].href === currentLocation) {
+//       menuItem[i].classList.add('active');
+//     }
+//     // Add the following code
+//     else {
+//       menuItem[i].classList.remove('active');
+//     }
+//   }
 
-  //end
+//   //end
   
   
   

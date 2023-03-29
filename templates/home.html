@@ -20,32 +20,6 @@
 </div>
 {% endfor %}
 
-  
-
-    <div class="col-sm-6 col-md-3">
-      <div class="card my-4">
-    {% thumbnail banners.image "200x200" crop="center" as im %}
-          <img src="{{ im.url }}" class="card" alt="...">
-
-        {% endthumbnail %}
-      </div>
-      </div> 
-
-{% comment %} <div class="container1">
-  <div class="heading">
-    <h1>Way2Agritech</h1>
-  </div>
-
-  <div class="loop-wrapper">
-    <div class="mountain"></div>
-    <div class="hill"></div>
-    <div class="tree"></div>
-    <div class="tree"></div>
-    <div class="tree"></div>
-    <div class="rock"></div>
-
-  </div> 
-</div>  TRUCK ANIMATION{% endcomment %}
 
 
 <div class="row">
@@ -63,7 +37,8 @@
         {% endthumbnail %}
         <div class= "card-body text-white boder-bottom shadow bg-black">
           <h3 class="card-text ">{{ post.name }} </h3>
-          <p class="card-text">Price:{{ post.price }} </p>
+
+          <p class="card-text">MRP:{{ post.price }} </p>
           <a href="{% url 'feed:detail' post.id %}" class="btn btn-primary">View</a>
         </div>
       </div>

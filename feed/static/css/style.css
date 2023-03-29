@@ -631,7 +631,7 @@ color: rgb(162, 161, 161);
 /*new css for new nav bar */
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   background-color: rgb(39, 39, 39);
   color: #fff;
@@ -765,7 +765,8 @@ nav ul li:hover > .dropdown-content {
 .image-container {
   position: relative;
   margin-right: 20px;
-  padding-left: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .discount {
@@ -788,7 +789,9 @@ nav ul li:hover > .dropdown-content {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  margin-right: 20%;
+  margin-right: 10%;
+  
+  margin-left: 10%;
 }
 .details-container h2 {
 text-align: left;
@@ -884,9 +887,16 @@ text-align: left;
   .image-container {
     margin-right: 0;
     margin-bottom: 20px;
+    /* overflow: hidden;  */
+    /* scale: 1.2; */
+
   }
 }
 
+.image-container img{
+  width: auto; /* ensure the image fills the container */
+  height: auto; /* maintain aspect ratio */
+}
 
 
 /* end discout tag on image */
@@ -903,7 +913,13 @@ text-align: left;
 
 .banner img {
   width: 100%;
-  height: 571px;
+  height: 100%;
+  object-fit: cover;
 }
  
 /* end banner css */
+
+.logo_navbar {
+  height: 70px;
+  width: 70px;
+}

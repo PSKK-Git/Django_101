@@ -37,8 +37,10 @@
         {% endthumbnail %}
         <div class= "card-body text-white boder-bottom shadow bg-black">
           <h3 class="card-text ">{{ post.name }} </h3>
+          <div class="gradient">Rs.{{ post.discounted_price }}</div>
 
-          <p class="card-text">MRP:{{ post.price }} </p>
+
+          <p class="card-text text-decoration-line-through">MRP:{{ post.price }} </p>
           <a href="{% url 'feed:detail' post.id %}" class="btn btn-primary">View</a>
         </div>
       </div>

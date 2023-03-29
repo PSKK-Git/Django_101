@@ -30,13 +30,6 @@ class SubPost(models.Model):
     def __str__(self):
         return self.name
 
-
-class Baner(models.Model):
-    name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='baner')
-    def __str__(self):
-        return self.name
-
 class Banner(models.Model):
     image = models.ImageField(upload_to='banners/')
     title = models.CharField(max_length=200)
@@ -44,6 +37,8 @@ class Banner(models.Model):
 
     def __str__(self):
         return self.title
+
+
 
 
 
@@ -68,4 +63,10 @@ class SubProduct(models.Model):
         return self.name
 
 
+
+class Baner(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='baner')
+    def __str__(self):
+        return self.name
 

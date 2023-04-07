@@ -3,7 +3,7 @@ from django.views.generic import TemplateView, DetailView, FormView
 from django.shortcuts import render, get_object_or_404
 from .models import Product, SubProduct, SubPost,Baner
 
-from .models import Post,Banner
+from .models import Post,Banner, About
 from django.shortcuts import render
 
 
@@ -14,6 +14,7 @@ class HomePageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['posts'] = Post.objects.all().order_by('-id')
         context['banners'] = Banner.objects.all()
+        context['about'] = About.objects.all()
         return context
 
     

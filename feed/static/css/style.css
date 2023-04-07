@@ -877,7 +877,7 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%,
   }
 }
 
-/* 
+
 .product-button {
   background-color: #007bff;
   color: #fff;
@@ -891,7 +891,7 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%,
 
 .product-button:hover {
   background-color: #0069d9;
-} */
+}
 
 .description-container {
   margin-top: 20px;

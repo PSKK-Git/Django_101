@@ -31,9 +31,9 @@ h1 {
     }
 
 h5 {
-  margin-top: 0.5em;
+  margin-top: 0.5rem;
   
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
 
 }
 
@@ -329,12 +329,8 @@ color: rgb(162, 161, 161);
   
 }
 
-.my-div a.clicked {
-  text-decoration: underline;
-  color: #4DB6AC;
-  transition-delay: 0.05s;
 
-} 
+
 .d-flex{
   padding: 10px;
 
@@ -563,96 +559,15 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%,
     margin: 0;
   }
 }
+/*new css sub post end*/
 
 
-/* new css for old nav bar */
-/* Style for the main menu */
-.nested-dropdowns {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
 
-/* Style for the top-level menu items */
-.nested-dropdowns > li {
-  display: inline-block;
-  position: relative;
-}
-
-/* Style for the top-level menu item link */
-.nested-dropdowns > li > .nested-dropdowns__item > a {
-  display: block;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #333333;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-  transition: background-color 0.2s ease-in-out;
-}
-
-/* Style for the top-level menu item link on hover */
-.nested-dropdowns > li > .nested-dropdowns__item > a:hover {
-  background-color: #ffffff;
-  color: #333333;
-}
-
-/* Style for the nested menu */
-.nested-dropdowns ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1;
-  padding: 0;
-  margin: 0;
-  background-color: #ffffff;
-  border: 1px solid #333333;
-  border-radius: 5px;
-}
-
-/* Style for the nested menu items */
-.nested-dropdowns ul li {
-  display: block;
-}
-
-/* Style for the nested menu item link */
-.nested-dropdowns ul li a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #333333;
-}
-
-/* Style for the nested menu item link on hover */
-.nested-dropdowns ul li a:hover {
-  background-color: #333333;
-  color: #ffffff;
-}
-
-/* Style for the nested menu arrow */
-.nested-dropdowns__arrow {
-  display: inline-block;
-  margin-left: 5px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 4px 0 4px;
-  border-color: #ffffff transparent transparent transparent;
-}
-
-/* Style for the top-level menu item on hover */
-.nested-dropdowns > li:hover > ul {
-  display: block;
-}
-
-
-/*end new css for old nav bar */
 
 /*new css for new nav bar */
 nav {
   display: flex;
-  justify-content: left;
+  justify-content: center; /* align items to center horizontally */
   align-items: center;
   background-color: rgb(39, 39, 39);
   color: #fff;
@@ -665,12 +580,14 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin: 0;
+  margin: 50%;
   padding: 0;
+  justify-content: center; /* align items to center horizontally */
+  gap: 30px; /* add gap between items */
 }
 
 nav li {
-  margin: 0 10px;
+  margin: 0;
   padding: 0;
 }
 
@@ -685,7 +602,7 @@ nav a {
 /* Styles for dropdown menu */
 nav ul {
   margin: 0;
-  padding: 0;
+  padding: 1.5%;
   list-style: none;
 }
 
@@ -768,7 +685,11 @@ nav ul li:hover > .dropdown-content {
   display: block;
 }
 
-
+.logo_navbar {
+  position: relative;
+  height: 2em;
+  width: 2em;
+}
 
 
 /*end new css for new nav bar */
@@ -947,10 +868,7 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%,
  
 /* end banner css */
 
-.logo_navbar {
-  height: 70px;
-  width: 70px;
-}
+
 
 /* footer css start*/
 /* *{
@@ -1063,3 +981,27 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%,
     }
 }
 /* footer css ends*/
+
+/* search bar styling starts*/
+
+.search-container {
+  position: relative;
+  display: inline-block;
+}
+
+.search-container input[type="search for your product"] {
+  padding-left: 30px;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+  height: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-container i {
+  left: 10px;
+  color: #aaa;
+}
+
+
+/* search bar styling ends */

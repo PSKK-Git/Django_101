@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+
+{% load thumbnail %}
+{% load static %}
+
+{% block content %}
+    <h1>Search Results</h1>
+    <p>Showing results for '{{ request.GET.q }}'</p>
+    {% if results %}
+        <ul>
+        {% for result in results %}
+            <div class="col-sm-6 col-md-3">
+                <div class="card my-4">
+                  <a href="{% url 'feed:detail' result.id %}" >
+                  {% thumbnail result.image "200x200" crop="center" as im %}
+                  <div class="discount">
+                    <h6>{{result.discount }}% OFF</h6>
+                  </div>
+                    <img src="{{ im.url }}" class="card-img-top" alt="...">
+          
+                  {% endthumbnail %}
+                  <div class= "card-body text-white boder-bottom shadow bg-black">
+                    <h1 class="card-text ">{{ result.name }} </h1>
+                    <div class="gradient">Rs.{{ result.discounted_price }}</div>
+          
+          
+                    <p class="card-text text-decoration-line-through">MRP:{{ result.price }} </p>
+                    
+                  </div>
+                </a>
+          
+                </div>
+              
+                
+              </div>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+{% endblock %}

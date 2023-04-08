@@ -4,7 +4,27 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product, SubProduct, SubPost,Baner
 
 from .models import Post,Banner, About
+
+from django.views import View
 from django.shortcuts import render
+from django.db.models import Q
+from .models import Post
+
+class SearchResultsView(View):
+    def get(self, request, *args, **kwargs):
+        query = request.GET.get('q')
+        if query:
+            results = Post.objects.filter(
+                Q(name__icontains=query) | 
+                Q(description__icontains=query) | 
+                Q(type__icontains=query)
+            ).distinct()
+        else:
+            results = Post.objects.all()
+        context = {'results': results}
+        return render(request, 'search_results.html', context)
+
+
 
 
 class HomePageView(TemplateView):

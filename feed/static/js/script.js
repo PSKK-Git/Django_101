@@ -1,42 +1,23 @@
 $(document).ready(function() {
+  const searchIcon = document.querySelector(".fa-search");
+const searchInput = document.querySelector("input[type='text']");
 
-//   // services click panna footer ku povum
-//   // Get the "Services" link
-// const servicesLink = document.querySelector('nav ul li:nth-child(3) a');
+searchIcon.addEventListener("click", function() {
+  if (searchInput.style.display === "none") {
+    searchInput.style.display = "block";
+  } else {
+    searchInput.style.display = "none";
+  }
+});
 
-// // Get the footer section
-// const footerSection = document.querySelector('footer');
 
-// // Add a click event listener to the "Services" link
-// servicesLink.addEventListener('click', (event) => {
-//   // Prevent the default link behavior
-//   event.preventDefault();
-  
-//   // Scroll smoothly to the footer section
-//   footerSection.scrollIntoView({ behavior: 'smooth' });
-// });
 
-//   // This JavaScript code will add an event listener to each menu item and toggle the "active" class when the user clicks on it. The "active" class will add an underline to the menu item, and it will stay underlined until the user clicks on a different menu item.
-//   const currentLocation = location.href;
-//   const menuItem = document.querySelectorAll('a');
-//   const menuLength = menuItem.length;
-//   for (let i = 0; i < menuLength; i++) {
-//     if (menuItem[i].href === currentLocation) {
-//       menuItem[i].classList.add('active');
-//     }
-//     // Add the following code
-//     else {
-//       menuItem[i].classList.remove('active');
-//     }
-//   }
-
-//   //end
   
   
   
   
   // js for new navbar
-  // Get the current page URL
+// Get the current page URL
 var currentURL = window.location.href;
 
 // Get all the menu items
@@ -51,10 +32,13 @@ for (var i = 0; i < menuItems.length; i++) {
     // Add the 'active' class to the menu item
     menuItems[i].classList.add('active');
     
-    // Exit the loop
-    break;
+  } else {
+    
+    // Remove the 'active' class from the menu item
+    menuItems[i].classList.remove('active');
   }
 }
+
 
   // end js for new navbar
 

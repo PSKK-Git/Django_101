@@ -4,10 +4,10 @@
 {% load static %}
 
 {% block content %}
-    <h1>Search Results</h1>
-    <p>Showing results for '{{ request.GET.q }}'</p>
+    {% comment %} <h1>Search Results</h1> {% endcomment %}
+    <h1>Showing results for '{{ request.GET.q }}'</h1>
     {% if results %}
-        <ul>
+        <div class="row">
         {% for result in results %}
             <div class="col-sm-6 col-md-3">
                 <div class="card my-4">
@@ -34,8 +34,16 @@
                 
               </div>
         {% endfor %}
-        </ul>
+        </div>
     {% else %}
         <p>No results found.</p>
     {% endif %}
 {% endblock %}
+
+<style>
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+</style>

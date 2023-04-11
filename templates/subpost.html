@@ -17,10 +17,12 @@
         <h4 class="discounted_price">₹ {{ subpost.discounted_price }}</h4>
         <h4 class="price">₹ {{ subpost.price }}  </h4>
         <h5 class="card-text">Type: {{ subpost.type }} </h5>
-                <h5 class="card-text">Quantity Available: {{ subpost.quantity_available }} </h5>
+        <h5 class="card-text">Quantity Available: {{ subpost.quantity_available }} </h5>
+        <p class="info-container">Info:{{ subpost.info }}</p>
+
       </div>
       
-      <button class="product-button">Add to Cart</button>
+      {% comment %} <button class="product-button">Add to Cart</button> {% endcomment %}
      
     </div>
     <div class="description-container">

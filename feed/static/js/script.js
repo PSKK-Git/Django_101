@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+
+ 
+  
+  // search products
   const searchIcon = document.querySelector(".fa-search");
 const searchInput = document.querySelector("input[type='text']");
 
@@ -26,8 +31,8 @@ var menuItems = document.querySelectorAll('nav a');
 // Loop through the menu items
 for (var i = 0; i < menuItems.length; i++) {
   
-  // Check if the menu item URL matches the current page URL
-  if (menuItems[i].href === currentURL) {
+  // Check if the menu item URL matches the current page URL or contains the path to the products page
+  if (menuItems[i].href === currentURL || currentURL.indexOf('/products') > -1) {
     
     // Add the 'active' class to the menu item
     menuItems[i].classList.add('active');
@@ -38,6 +43,7 @@ for (var i = 0; i < menuItems.length; i++) {
     menuItems[i].classList.remove('active');
   }
 }
+
 
 
   // end js for new navbar
@@ -78,3 +84,5 @@ $('.navbar-collapse ul li a').click(function() {
      $(this).removeClass("clicked");
    });
  });
+
+ 

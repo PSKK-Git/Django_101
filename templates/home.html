@@ -11,14 +11,19 @@
 
 {% block body%}
 
-
-{% for banner in banners %}
 <div class="banner">
-    <a href="{{ banner.url }}">
-        <img src="{{ banner.image.url }}" alt="{{ banner.title }}">
-    </a>
+  {% for banner in banners %}
+  <div class="banner">
+      <a href="{{ banner.url }}">
+          <img src="{{ banner.image.url }}" alt="{{ banner.title }}">
+          <div class="banner-text">
+            <h1>Way2Agri</h1>
+            <p>Your Trusted Source for Agricultural Information</p>
+          </div>
+      </a>
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}
 
 
 
@@ -37,12 +42,12 @@
           <img src="{{ im.url }}" class="card-img-top" alt="...">
 
         {% endthumbnail %}
-        <div class= "card-body text-white boder-bottom shadow bg-black">
-          <h1 class="card-text ">{{ post.name }} </h1>
-          <div class="gradient">Rs.{{ post.discounted_price }}</div>
+        <div class= "card-body no-underline text-white boder-bottom shadow bg-black ">
+          <h1 class="card-text no-underline ">{{ post.name }} </h1>
+          <div class="gradient no-underline">Rs.{{ post.discounted_price }}</div>
 
 
-          <p class="card-text text-decoration-line-through">MRP:{{ post.price }} </p>
+          <p class="card-text no-underline text-decoration-line-through">MRP:{{ post.price }} </p>
           
         </div>
       </a>
@@ -53,6 +58,7 @@
     </div>
   {% endfor %}
 </div>
+</div>ß
 {% endblock body%}
 
 
